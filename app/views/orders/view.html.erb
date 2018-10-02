@@ -1,0 +1,28 @@
+<b>Orders</b> Vous pouvez creer une commande en envoyant un request (post) sous /orders/create :  { 
+	"nom":"personne",
+	"adresse":"adresse ",
+	"pizzas":["nap","marg"]
+	
+} 
+<br><br><br>
+<% @orders.each do |order| %>
+<br>
+<table align=center border=1 >
+  <tr align-text=center > 
+	<td>Nom:
+	<td>Adresse
+	<td> Pizzas
+  </tr>
+  <tr>
+	<td> <%= order[:order][:nom]  %>
+	<td> <%= order[:order][:adresse] %>
+	<td> <table border=1 >
+		<% order[:pizzas].each do |pizza| %>
+                     <tr><td> <%= pizza[:name] %> <td> <img src="<%= pizza[:url] %>" width="60px" height="60px" />
+                <% end %>
+	     </table>
+  </tr>
+</table>
+<% end %>
+<br>
+  
